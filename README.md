@@ -1,5 +1,5 @@
 # Source code for my webpage
-HTML and CSS Written and maintained by Jorel Huerto
+HTML and CSS Written and maintained by Jorel Huerto via VSCode
 # Source Timeline
 
 ## Current Version
