@@ -17,4 +17,9 @@
     position: relative;
     min-height: 100vh;
     background: linear-gradient(#1c1c1c,#323232);
+    padding: 30px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
