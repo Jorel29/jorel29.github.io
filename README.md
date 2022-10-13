@@ -6,4 +6,4 @@ HTML and CSS Written and maintained by Jorel Huerto via VSCode
 v1.0 - Highschool project from 2017-18
 
 ## In-Progress 
-v2.0
+v2.0b -
