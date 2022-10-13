@@ -16,4 +16,5 @@
 {
     position: relative;
     min-height: 100vh;
+    background: linear-gradient(#1c1c1c,#323232);
 }
