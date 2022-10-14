@@ -1,9 +1,10 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
 *
 {
     font-family: 'Montserrat', sans-serif;
     font-size: 4vh;
-
+    color: var(--white);
 }
 :root
 {
@@ -33,4 +34,14 @@ button:hover
 {
     background-color: transparent;
     color: var(--periwinkle);
+}
+.Name
+{
+    text-align: left;
+    display: flex;
+}
+.AMwrapper
+{
+    display: grid;
+    grid-template-columns: auto;
 }
