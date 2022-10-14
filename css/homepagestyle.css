@@ -35,13 +35,9 @@ button:hover
     background-color: transparent;
     color: var(--periwinkle);
 }
-.Name
-{
-    text-align: left;
-    display: flex;
-}
 .AMwrapper
-{
+{   
     display: grid;
-    grid-template-columns: auto;
+    margin: 0px;
+    text-align: center;
 }
