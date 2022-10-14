@@ -10,18 +10,18 @@
     --red: #f83038
 }
 body{
-    background-color: #2f2f2f;
+    background-color: #0a184ccd;
 }
 nav
 {
-    background-color:blue;
+    background-color:transparent;
     border-radius: 100px;
     text-align: center;
 }
 button
 {
     background-color: transparent;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.731);
     transition-duration: 0.5s;
     border-radius: 50px;
     border-color: transparent;
