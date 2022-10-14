@@ -23,10 +23,11 @@ nav
 button
 {
     background-color: transparent;
+    border-color: transparent;
     color: rgba(255, 255, 255, 0.95);
     transition-duration: 0.30s;
     border-radius: 50px;
-    border-color: transparent;
+    
 }
 button:hover
 {
