@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 *
 {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
 :root
@@ -12,14 +9,21 @@
     --white: #fff;
     --red: #f83038
 }
-.main
+nav
 {
-    position: relative;
-    min-height: 100vh;
-    background: linear-gradient(#1c1c1c,#323232);
-    padding: 30px 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    background-color: #2f2f2f;
+    border-radius: 100px;
+    text-align: center;
+}
+button
+{
+    background-color: blueviolet;
+    color: #fff;
+    transition-duration: 0.5s;
+    border-radius: 50px;
+}
+button:hover
+{
+    background-color: white;
+    color: black
 }
