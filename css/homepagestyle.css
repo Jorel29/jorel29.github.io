@@ -2,6 +2,7 @@
 *
 {
     font-family: 'Montserrat', sans-serif;
+    font-size: 4vh;
 }
 :root
 {
@@ -22,12 +23,12 @@ button
 {
     background-color: transparent;
     color: rgba(255, 255, 255, 0.731);
-    transition-duration: 0.5s;
+    transition-duration: 0.30s;
     border-radius: 50px;
     border-color: transparent;
 }
 button:hover
 {
-    background-color: white;
+    background-color: rgb(196, 189, 189);
     color: black
 }
