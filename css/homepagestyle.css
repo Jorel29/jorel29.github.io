@@ -9,18 +9,22 @@
     --white: #fff;
     --red: #f83038
 }
+body{
+    background-color: #2f2f2f;
+}
 nav
 {
-    background-color: #2f2f2f;
+    background-color:blue;
     border-radius: 100px;
     text-align: center;
 }
 button
 {
-    background-color: blueviolet;
+    background-color: transparent;
     color: #fff;
     transition-duration: 0.5s;
     border-radius: 50px;
+    border-color: transparent;
 }
 button:hover
 {
