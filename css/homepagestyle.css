@@ -3,6 +3,7 @@
 {
     font-family: 'Montserrat', sans-serif;
     font-size: 4vh;
+
 }
 :root
 {
@@ -22,13 +23,13 @@ nav
 button
 {
     background-color: transparent;
-    color: rgba(255, 255, 255, 0.731);
+    color: rgba(255, 255, 255, 0.95);
     transition-duration: 0.30s;
     border-radius: 50px;
     border-color: transparent;
 }
 button:hover
 {
-    background-color: rgb(196, 189, 189);
+    background-color: #c1caedcd;
     color: black
 }
