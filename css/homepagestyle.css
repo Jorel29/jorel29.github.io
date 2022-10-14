@@ -23,14 +23,3 @@
     align-items: center;
     flex-direction: column;
 }
-.main::before
-{
-    content: 'JorelHuerto';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 64pt;
-    font-weight: 1000;
-    color: rgba(255, 255, 255, 0.05)
-}
