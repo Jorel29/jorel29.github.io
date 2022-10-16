@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 *
 {
     font-family: 'Montserrat', sans-serif;
@@ -13,8 +13,10 @@
     --red: #f83038;
     --periwinkle: rgba(128, 128, 255, 1);
 }
+
 body{
     background-color: #474747;
+    font-weight: bolder;
 }
 nav
 {
@@ -23,6 +25,7 @@ nav
 }
 button
 {
+    font-weight: 900;
     background-color: transparent;
     border-color: transparent;
     color: rgba(255, 255, 255, 0.95);
