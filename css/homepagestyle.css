@@ -14,7 +14,7 @@
     --periwinkle: rgba(128, 128, 255, 1);
 }
 body{
-    background-color: #061444;
+    background-color: #474747;
 }
 nav
 {
@@ -32,7 +32,7 @@ button
 }
 button:hover
 {
-    background-color: transparent;
+    background-color: white;
     color: var(--periwinkle);
 }
 .AMwrapper
