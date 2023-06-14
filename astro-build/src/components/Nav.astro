@@ -1,0 +1,29 @@
+---
+import Card from './Card.astro'
+---
+
+<ul class="nav-bar">
+    <Card
+		href="https://astro.build/integrations/"
+		title="Integrations"
+		body=""
+	/>
+    <Card
+        href="https://astro.build/integrations/"
+        title="Integrations"
+        body=""
+    />
+    <Card
+        href="https://astro.build/integrations/"
+        title="Integrations"
+        body=""
+    />
+</ul>
+<style>
+    .nav-bar{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+        align-items: center;
+        background-color: aqua;
+    }
+</style>
