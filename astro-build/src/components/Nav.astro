@@ -1,10 +1,18 @@
 ---
 import DropdownButton from './DropdownButton.svelte'
+let GitHubLink = "https://github.com/Jorel29";
+let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
 ---
 
 <div class="nav-bar">
     <div class="div-nav-bar">
-        <DropdownButton></DropdownButton>
+        <DropdownButton/>
+        <a class="external-link" href={LinkedInLink}>
+            <img class="linked-in-icon" src="/LI-In-Bug.png"/>        
+        </a>
+        <a class="external-link" href={GitHubLink}>
+            <img class="github-icon" src="/github-mark-white.png"/>        
+        </a>
     </div>
 </div>
 <style>
@@ -27,6 +35,15 @@ import DropdownButton from './DropdownButton.svelte'
     }
     .div-nav-bar{
         display: flex;
-        max-width: 33%;
+        max-width: 100%;
+        padding-top: 10px;
+    }
+    .linked-in-icon{
+        width: 6%;
+        height:auto;
+    }
+    .github-icon{
+        width: 10%;
+        height: auto;
     }
 </style>
