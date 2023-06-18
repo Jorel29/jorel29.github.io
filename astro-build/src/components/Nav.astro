@@ -7,6 +7,7 @@ let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
 <div class="nav-bar">
     <div class="div-nav-bar">
         <DropdownButton/>
+        <p class="nav-title">Jorel Huerto</p>
         <a class="external-link" href={LinkedInLink}>
             <img class="linked-in-icon" src="/LI-In-Bug.png"/>        
         </a>
@@ -16,6 +17,13 @@ let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
     </div>
 </div>
 <style>
+    .nav-title{
+        font-family: "FiraMono", monospace;
+        color:aqua;
+        font-size: 3rem;
+        margin: 0%;
+        padding-inline: fill;
+    }
     .nav-bar{
         margin: 0;
         width: 100%;
@@ -39,11 +47,11 @@ let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
         padding-top: 10px;
     }
     .linked-in-icon{
-        width: 6%;
-        height:auto;
+        width: auto;
+        height:55px;
     }
     .github-icon{
-        width: 10%;
-        height: auto;
+        width: auto;
+        height: 55px;
     }
 </style>

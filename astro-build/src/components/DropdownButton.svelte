@@ -7,8 +7,9 @@
     .dropdown-button{
         cursor: pointer;
         border-radius: 50%;
-        width: 3rem;
-        height: 3rem;
+        width: auto;
+        min-width: 50px;
+        height: 50px;
         border-color: transparent;
         align-items: center;
         text-align: center;
