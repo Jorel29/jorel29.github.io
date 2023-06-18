@@ -8,6 +8,8 @@
     .hamburger-icon{
         fill: rgba(46, 1, 46, 1);
         width: fixed;
+        height: 75%;
+        padding-top: 4px;
         align-content: center;
     }
     

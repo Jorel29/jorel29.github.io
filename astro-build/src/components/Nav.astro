@@ -19,16 +19,16 @@ let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
 <style>
     .nav-title{
         font-family: "FiraMono", monospace;
-        color:aqua;
+        color: rgb(198, 102, 68);
         font-size: 3rem;
+        font-weight: 700;
         margin: 0%;
-        padding-inline: fill;
+        
     }
     .nav-bar{
         margin: 0;
         width: 100%;
         height: 10%;
-        display: block;
         grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
         align-items: center;
         vertical-align: middle;
@@ -42,16 +42,32 @@ let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
         z-index: 1;
     }
     .div-nav-bar{
-        display: flex;
+        display:flex;
+        justify-content: center;
         max-width: 100%;
         padding-top: 10px;
+    }
+    .external-link{
+        justify-content: baseline;
     }
     .linked-in-icon{
         width: auto;
         height:55px;
     }
+    .linked-in-icon:hover{
+        width: auto;
+        height:55px;
+        background-color: gray;
+        border-radius: 5px;
+    }
     .github-icon{
         width: auto;
         height: 55px;
+    }
+    .github-icon:hover{
+        width: auto;
+        height: 55px;
+        background-color: gray;
+        border-radius: 50%;
     }
 </style>

@@ -6,6 +6,7 @@
 <style>
     .dropdown-button{
         cursor: pointer;
+        padding-top: 3px;
         border-radius: 50%;
         width: auto;
         min-width: 50px;
