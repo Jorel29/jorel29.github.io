@@ -14,7 +14,7 @@
         border-color: transparent;
         align-items: center;
         text-align: center;
-        background-color: darkslategray;
+        background-color: #23153c;
     }
     .dropdown-button:hover{
         background-color: gray;

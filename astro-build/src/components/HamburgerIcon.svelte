@@ -5,8 +5,9 @@
     <rect y="71%" width="100%" height="15%" rx="10%"></rect>
 </svg>
 <style>
+ /*rgba(46, 1, 46, 1)*/
     .hamburger-icon{
-        fill: rgba(46, 1, 46, 1);
+        fill: slategray;
         width: fixed;
         height: 75%;
         padding-top: 4px;
