@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/74121684/user-swiper-js-in-astro-build
