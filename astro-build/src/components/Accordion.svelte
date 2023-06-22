@@ -6,12 +6,8 @@
   
 <div class="accordion">
     <div class="header">
-        <div class="text">
-            <slot name="head"></slot>	
-        </div>
-          
-        <button on:click={handleClick}>
-            +/-
+        <button class="slide" on:click={handleClick}>
+            <slot name="head"></slot>
         </button>
     </div>
       
@@ -33,13 +29,20 @@
         width:100%;
     }
     
-    div.header .text {
-        flex: 1;
-        margin-right: 5px;
+    button.slide{
+        display:flex;
+        width: 100%;
+        background-color: white;
+        border-radius: 0.25rem;
+        border-color: transparent;
+    }
+    button.slide:hover{
+        border-color: black;
     }
     
     div.details {
         background-color: #cecece;
         padding:1rem;
+        border-radius: 0.25rem;
     }
 </style>
