@@ -1,10 +1,10 @@
 
 
 <div class="panel-container">
-    <slot class="panel one active" name="panel-one"/>
-    <slot class="panel two" name="panel-two"/>
-    <slot class="panel three" name="panel-three"/>
-    <slot class="panel four" name="panel-four"/>
+    <slot name="panel-one"/>
+    <slot name="panel-two"/>
+    <slot name="panel-three"/>
+    <slot name="panel-four"/>
 </div>
 
 <style>
@@ -12,20 +12,6 @@
         padding-top: 75px;
         display: flex;
         width: 100%;
-    }
-    .panel{
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 80vh;
-        cursor: pointer;
-        flex: 0.2;
-        margin:8px;
-        position: relative;
-        transition: all 0.7s ease-out;
-    }
-    .panel.active{
-        flex: 3;
     }
 </style>
 
