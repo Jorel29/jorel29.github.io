@@ -4,6 +4,7 @@ import Card from '../components/Card.astro';
 import ExpandingCard from '../components/ExpandingCard.astro'
 import Nav from '../components/Nav.astro';
 import PanelLayout from '../layouts/PanelLayout.astro';
+import Accordion from '../components/Accordion.svelte';
 ---
 
 
@@ -12,6 +13,17 @@ import PanelLayout from '../layouts/PanelLayout.astro';
 	<main>
 		<Nav></Nav>
 		<div id="background">
+			<div id="accordion-wrapper">
+				<Accordion client:load>
+					<span slot="head">This is my header</span>
+					<div slot="details">
+						<p>
+							These are the details.
+						</p>
+					</div>
+				</Accordion>
+			</div>
+			
 			<PanelLayout>
 				<ExpandingCard
 					href="https://docs.astro.build/"
@@ -87,6 +99,10 @@ import PanelLayout from '../layouts/PanelLayout.astro';
 </Layout>
 
 <style>
+	#accordion-wrapper{
+		padding-top: 50px;
+		z-index: 1;
+	}
 	#background{
 		overflow: visible;
 		margin-top: 10px;
