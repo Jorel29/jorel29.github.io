@@ -1,12 +1,13 @@
 <script>
     export let open = false;
     import { slide } from 'svelte/transition';
-    const handleClick = () => open = !open
+    const handleClick = () => open = !open;
+    const focusOut =()=> open = false;
 </script>
   
 <div class="accordion">
     <div class="header">
-        <button class="slide" on:click={handleClick}>
+        <button class="slide" on:click={handleClick} on:focusout={focusOut}>
             <slot name="head"></slot>
         </button>
     </div>
@@ -31,15 +32,21 @@
     
     button.slide{
         display:flex;
-        width: 100%;
+        width: 30%;
+        height: 4rem;
         background-color: white;
         border-radius: 0.25rem;
         border-color: transparent;
+        transition: 0.35s ease-in-out;
     }
     button.slide:hover{
+        width: 100%;
+        
+    }
+    button.slide:focus{
+        width: 100%;
         border-color: black;
     }
-    
     div.details {
         background-color: #cecece;
         padding:1rem;
