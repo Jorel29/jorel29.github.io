@@ -14,11 +14,11 @@ import Accordion from '../components/Accordion.svelte';
 		<Nav></Nav>
 		<div id="background">
 			<div id="accordion-wrapper">
-				<Accordion client:load>
-					<span slot="head">This is my header</span>
+				<Accordion client:only>
+					<div slot="head">About Me</div>
 					<div slot="details">
 						<p>
-							These are the details.
+							type
 						</p>
 					</div>
 				</Accordion>
@@ -102,6 +102,7 @@ import Accordion from '../components/Accordion.svelte';
 	#accordion-wrapper{
 		padding-top: 50px;
 		z-index: 1;
+		left: 50%
 	}
 	#background{
 		overflow: visible;
@@ -155,4 +156,5 @@ import Accordion from '../components/Accordion.svelte';
 	Nav{
 		z-index: 1;
 	}
+	
 </style>
