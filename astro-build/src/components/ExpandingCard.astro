@@ -4,12 +4,13 @@ export interface Props {
 	body: string;
 	href: string;
 }
+import Accordion from './Accordion.svelte';
 
 const { href, title, body } = Astro.props;
 ---
 
 <li class="panel">
-	<a href={href}>
+	<a>
 		<h2>
 			{title}
 			<span>&rarr;</span>
@@ -17,6 +18,14 @@ const { href, title, body } = Astro.props;
 		<p>
 			{body}
 		</p>
+		<Accordion xTransform={'-50%'} client:load>
+			<div slot="head">About Me</div>
+				<div slot="details">
+					<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+			    </div>
+		</Accordion>
 	</a>
 </li>
 <style>

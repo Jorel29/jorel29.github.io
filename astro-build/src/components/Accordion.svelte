@@ -2,6 +2,7 @@
     
     import { slide } from 'svelte/transition';
     export let { open } = false;
+    export let xTransform = `${0}%`;
     const handleClick = () => open = !open;
     const focusOut = () => open = false;
 
@@ -9,7 +10,7 @@
   
 <div class="accordion">
     <div class="header">
-        <button class="slide" on:click={handleClick} on:focusout={focusOut}>
+        <button class="slide" style="transform: translate({xTransform},0%)" on:click={handleClick} on:focusout={focusOut}>
             <slot name="head"></slot>
         </button>
     </div>
@@ -33,7 +34,6 @@
     }
     
     .slide{
-        transform: translate(-50%,0%);
         width: 30%;
         height: 4rem;
         background-color: white;
@@ -54,7 +54,7 @@
         padding:1rem;
         border-radius: 0.25rem;
         display: block;
-        transform: translate(-50%,0%);
+        transform: translate(var(--xoffset),0%);
         width: 50%;
         max-height: 30px;
         text-overflow: ellipsis;
