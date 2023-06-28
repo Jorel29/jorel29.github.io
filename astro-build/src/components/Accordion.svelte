@@ -34,17 +34,12 @@
     
     .slide{
         transform: translate(-50%,0%);
-        
         width: 30%;
         height: 4rem;
         background-color: white;
         border-radius: 0.25rem;
         border-color: transparent;
         transition: 0.35s ease-in-out;
-    }
-    .details:hover{
-        width: 50%;
-        transition: 0.1s ease-in-out;
     }
     .slide:focus{
         width: 70%;
@@ -54,12 +49,25 @@
         border-width: 5px;
     }
     .details {
+        overflow: hidden;
         background-color: #cecece;
         padding:1rem;
         border-radius: 0.25rem;
         display: block;
         transform: translate(-50%,0%);
-        width: 30%;
+        width: 50%;
+        max-height: 30px;
+        text-overflow: ellipsis;
+        transition: 0.35s ease-in-out;
+    }
+    .details:hover{
+        width: 50%;
+        max-height: 50%;
+    }
+    slot{
+        width: 80%;
+    }
+    slot:hover{
         transition: 0.35s ease-in-out;
     }
 </style>
