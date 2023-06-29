@@ -1,17 +1,17 @@
 <script>
     
     import { slide } from 'svelte/transition';
-    export let { open } = false;
-    export let { styleAccordion } = '';
-    export let { styleSlide } = '';
-    export let { styleDetails } = '';
+    export let open = false;
+    export let styleAccordion  = '';
+    export let styleSlide  = '';
+    export let styleDetails = '';
     const handleClick = () => open = !open;
     const focusOut = () => open = false;
-
-    const styleAcc = styleAccordion;
-    const styleSl = styleSlide;
-    const styleDet = styleDetails;
-
+    
+    console.log(open);
+    console.log(styleAccordion);
+    console.log(styleSlide);
+    console.log(styleDetails);
     /*function slide2Axis(node, { duration = 400, maxWidth=75, maxHeight}){
         return {
             duration,
@@ -27,15 +27,15 @@
     }*/
 </script>
   
-<div class="accordion {styleAcc}">
+<div class="accordion {styleAccordion}">
     <div class="header">
-        <button class="slide {styleSl}" on:click={handleClick} on:focusout={focusOut}>
+        <button class="slide {styleSlide}" on:click={handleClick} on:focusout={focusOut}>
             <slot name="head"></slot>
         </button>
     </div>
       
     {#if open}
-    <div class="details" style={styleDet} transition:slide>
+    <div class="details" style={styleDetails} transition:slide>
         <slot name="details">
         </slot>
     </div>
