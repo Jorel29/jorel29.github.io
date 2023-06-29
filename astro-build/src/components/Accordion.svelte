@@ -12,7 +12,7 @@
     const styleSl = styleSlide;
     const styleDet = styleDetails;
 
-    function slide2Axis(node, { duration = 400, maxWidth=75, maxHeight}){
+    /*function slide2Axis(node, { duration = 400, maxWidth=75, maxHeight}){
         return {
             duration,
             css: t => {
@@ -24,7 +24,7 @@
                      
             }
         }
-    }
+    }*/
 </script>
   
 <div class="accordion {styleAcc}">
@@ -75,7 +75,6 @@
         padding:1rem;
         border-radius: 0.25rem;
         display: block;
-        transform: translate(var(--xoffset),0%);
         /*width: 75%*/;
         text-overflow: ellipsis;
         white-space: normal;
