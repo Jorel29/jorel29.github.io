@@ -2,9 +2,9 @@
     
     import { slide } from 'svelte/transition';
     export let { open } = false;
-    export let styleAccordion = '';
-    export let styleSlide = '';
-    export let styleDetails = '';
+    export let { styleAccordion } = '';
+    export let { styleSlide } = '';
+    export let { styleDetails } = '';
     const handleClick = () => open = !open;
     const focusOut = () => open = false;
 
@@ -82,11 +82,5 @@
     }
     .details:hover{
         white-space: normal;
-    }
-    slot{
-        width: 100%;
-    }
-    slot:hover{
-        transition: 0.35s ease-in-out;
     }
 </style>
