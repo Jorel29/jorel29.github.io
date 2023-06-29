@@ -2,22 +2,30 @@
     
     import { slide } from 'svelte/transition';
     export let { open } = false;
-    export let xTransformSlide = `${0}%`;
-    export let xTransformDetails = `${0}%`;
+    export let styleAccordion = '';
+    export let styleSlide = '';
+    export let xTranslateSlide = `translate-x-${0}`;
+    export let xTranslateDetails = `${0}`;
+    export let slideWidth = `${30}%`;
+    export let slideWidthHover = `${45}%`;
+    export let slideWidthFocus = `${90}%`;
+    export let detailsWidth = `${75}%`;
     const handleClick = () => open = !open;
     const focusOut = () => open = false;
 
+    const styleAcc = styleAccordion;
+    const styleSl = styleSlide;
 </script>
   
-<div class="accordion">
+<div class="accordion {styleAcc}">
     <div class="header">
-        <button class="slide" style="transform: translate({xTransformSlide},0%)" on:click={handleClick} on:focusout={focusOut}>
+        <button class="slide {styleSl}" on:click={handleClick} on:focusout={focusOut}>
             <slot name="head"></slot>
         </button>
     </div>
       
     {#if open}
-    <div class="details" style="transform: translate({xTransformDetails},0%)" transition:slide>
+    <div class="details" transition:slide>
         <slot name="details">
         </slot>
     </div>
@@ -27,6 +35,7 @@
 <style>
     div.accordion {
         margin: 1rem 0;
+        color: black;
     }
     
     div.header {
@@ -65,7 +74,6 @@
         transition: 0.35s ease-in-out;
     }
     .details:hover{
-       
         white-space: normal;
     }
     slot{

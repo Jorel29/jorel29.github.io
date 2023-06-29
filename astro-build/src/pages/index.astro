@@ -14,7 +14,7 @@ import Accordion from '../components/Accordion.svelte';
 		<Nav></Nav>
 		<div id="background">
 			<div id="accordion-wrapper">
-				<Accordion xTransformSlide={'-50%'} xTransformDetails={'-50%'}client:load>
+				<Accordion styleAccordion={"relative left-1/2"} styleSlide={"-translate-x-1/2"} client:visible>
 					<div slot="head">About Me</div>
 					<div slot="details">
 						<p>
@@ -102,7 +102,12 @@ import Accordion from '../components/Accordion.svelte';
 	#accordion-wrapper{
 		padding-top: 50px;
 		z-index: 1;
-		left: 50%
+	}
+	.inset-center {
+  		position: absolute;
+  		top: 50%;
+  		left: 50%;
+  		transform: translate(-50%, -50%);
 	}
 	#background{
 		overflow: visible;

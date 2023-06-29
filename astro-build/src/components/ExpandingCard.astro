@@ -18,9 +18,9 @@ const { href, title, body } = Astro.props;
 		<p>
 			{body}
 		</p>
-		<div id="wrapper">
-			<Accordion xTransformSlide={'0%'} xTransformDetails={'5%'} client:load>
-				<div slot="head">About Me</div>
+		<div class="grid place-content-center" id="wrapper">
+			<Accordion client:visible>
+				<div slot="head" class="text-sm">Learn More &#8595;</div>
 					<div slot="details">
 						<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -31,10 +31,10 @@ const { href, title, body } = Astro.props;
 	</a>
 </li>
 <style>
+	
     .panel{
         list-style: none;
 		overflow: hidden;
-		white-space: nowrap;
 		display: flex;
 		padding: 0.25rem;
 		background-color: rgba(0, 0, 0, 0.2);
@@ -48,7 +48,6 @@ const { href, title, body } = Astro.props;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        height: 80vh;
         cursor: pointer;
         flex: 0.5;
         margin:0px;
@@ -56,9 +55,8 @@ const { href, title, body } = Astro.props;
         transition: all 0.7s ease-out;
 	
     }
-    .panel:hover{
+    .panel{
         flex: 1;
-
     }
 
 	.panel > a {
@@ -81,12 +79,5 @@ const { href, title, body } = Astro.props;
 		margin-top: 0.5rem;
 		margin-bottom: 0;
 		color: gray;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent));
 	}
 </style>
