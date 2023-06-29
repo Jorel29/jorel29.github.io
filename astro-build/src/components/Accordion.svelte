@@ -54,15 +54,12 @@
     }
     
     .slide{
-        width: 30%;
+        /*width: 30%;*/
         height: 4rem;
         background-color: white;
         border-radius: 50px;
         border-color: transparent;
         transition: 0.35s ease-in-out;
-    }
-    .slide:hover{
-        width: 45%;
     }
     .slide:focus{
         width: 90%;
@@ -79,7 +76,7 @@
         border-radius: 0.25rem;
         display: block;
         transform: translate(var(--xoffset),0%);
-        width: 75%;
+        /*width: 75%*/;
         text-overflow: ellipsis;
         white-space: normal;
         transition: 0.35s ease-in-out;
