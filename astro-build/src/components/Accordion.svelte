@@ -4,17 +4,13 @@
     export let { open } = false;
     export let styleAccordion = '';
     export let styleSlide = '';
-    export let xTranslateSlide = `translate-x-${0}`;
-    export let xTranslateDetails = `${0}`;
-    export let slideWidth = `${30}%`;
-    export let slideWidthHover = `${45}%`;
-    export let slideWidthFocus = `${90}%`;
-    export let detailsWidth = `${75}%`;
+    export let styleDetails = '';
     const handleClick = () => open = !open;
     const focusOut = () => open = false;
 
     const styleAcc = styleAccordion;
     const styleSl = styleSlide;
+    const styleDet = styleDetails;
 </script>
   
 <div class="accordion {styleAcc}">
@@ -25,7 +21,7 @@
     </div>
       
     {#if open}
-    <div class="details" transition:slide>
+    <div class="details" style={styleDet} transition:slide>
         <slot name="details">
         </slot>
     </div>
