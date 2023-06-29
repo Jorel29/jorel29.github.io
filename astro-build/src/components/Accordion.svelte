@@ -5,13 +5,12 @@
     export let styleAccordion  = '';
     export let styleSlide  = '';
     export let styleDetails = '';
-    const handleClick = () => open = !open;
+    const handleClick = () => {
+        open = !open
+        //want to add an unfocus logic
+    };
     const focusOut = () => open = false;
     
-    console.log(open);
-    console.log(styleAccordion);
-    console.log(styleSlide);
-    console.log(styleDetails);
     /*function slide2Axis(node, { duration = 400, maxWidth=75, maxHeight}){
         return {
             duration,
