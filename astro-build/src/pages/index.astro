@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import ExpandingCard from '../components/ExpandingCard.astro'
+import Nav from '../components/Nav.astro';
+import PanelLayout from '../layouts/PanelLayout.astro';
+import Accordion from '../components/Accordion.svelte';
+---
+
+
+
+<Layout title="Welcome to Jorel's Website">
+	<main>
+		<Nav></Nav>
+		<div id="background">
+			<div id="accordion-wrapper">
+				<Accordion styleAccordion="relative left-1/2" styleSlide="w-1/4 hover:w-6/12 focus:w-8/12 -translate-x-1/2" styleDetails="width: 75%; transform: translate(-50%,0%);" client:visible>
+					<div slot="head">About Me</div>
+					<div slot="details">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+				</Accordion>
+			</div>
+			
+			<PanelLayout>
+				<ExpandingCard
+					href=""
+					title="Project 1"
+					body="Learn how Astro works and explore the official API docs."
+					slot="panel-one"
+				/>
+				<ExpandingCard
+					href=""
+					title="Project 2"
+					body="Supercharge your project with new frameworks and libraries."
+					slot="panel-two"
+				/>
+				<ExpandingCard
+					href=""
+					title="Project 3"
+					body="Explore a galaxy of community-built starter themes."
+					slot="panel-three"
+				/>
+				<ExpandingCard
+					href=""
+					title="Project 4"
+					body="Come say hi to our amazing Discord community. ❤️"
+					slot="panel-four"
+				/>
+			</PanelLayout>
+			
+			<div class="swiper">
+				<div class="swiper-wrapper">
+					  <div class="swiper-slide">
+						<Card
+							href="https://astro.build/chat/"
+							title="Community"
+							body="Come say hi to our amazing Discord community. ❤️"
+						/>
+					</div>
+					<div class="swiper-slide">
+						<Card
+							href="https://astro.build/themes/"
+							title="Themes"
+							body="Explore a galaxy of community-built starter themes."
+						/>
+					</div>
+				</div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
+		</div>
+		
+		  
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+		 <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+		 <script is:inline></script>
+		 <script is:inline>const swiper = new Swiper('.swiper', {navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		  },});</script>
+
+	  <script>
+	  	VANTA.NET({
+	  		el: "#background",
+			mouseControls: true,
+			touchControls: true,
+			gyroControls: false,
+			minHeight: 200.00,
+			minWidth: 200.00,
+			height: 200,
+			scale: .75,
+			scaleMobile: 1.00
+	  	})
+	  </script>
+	</main>
+</Layout>
+
+<style>
+	#accordion-wrapper{
+		padding-top: 50px;
+		z-index: 1;
+	}
+	.inset-center {
+  		position: absolute;
+  		top: 50%;
+  		left: 50%;
+  		transform: translate(-50%, -50%);
+	}
+	#background{
+		overflow: visible;
+		margin-top: 10px;
+		width: 100%;
+		height: 1080px;
+		z-index: 0;
+	}
+	main {
+		margin: auto;
+		padding: 0rem
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+	.instructions code {
+		font-size: 0.875em;
+		font-weight: bold;
+		background: rgba(var(--accent), 12%);
+		color: rgb(var(--accent));
+		border-radius: 4px;
+		padding: 0.3em 0.45em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+		padding-top: 75px;
+	}
+	Nav{
+		z-index: 1;
+	}
+	
+</style>

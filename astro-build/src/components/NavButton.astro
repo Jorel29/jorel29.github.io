@@ -1,0 +1,16 @@
+---
+export interface Props {
+    title: string;
+    href: string;
+}
+const { title , href } = Astro.props; 
+---
+
+
+<ul class="nav-button">
+    <a href={href}>
+        <p>
+            {title}
+        </p>
+    </a>
+</ul>
