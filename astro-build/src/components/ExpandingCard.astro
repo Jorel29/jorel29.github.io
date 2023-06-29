@@ -18,7 +18,7 @@ const { href, title, body } = Astro.props;
 		<p>
 			{body}
 		</p>
-		<div class="grid place-content-center" id="wrapper">
+		<div id="wrapper">
 			<Accordion client:visible>
 				<div slot="head" class="text-sm">Learn More &#8595;</div>
 					<div slot="details">

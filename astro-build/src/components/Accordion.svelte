@@ -11,6 +11,20 @@
     const styleAcc = styleAccordion;
     const styleSl = styleSlide;
     const styleDet = styleDetails;
+
+    function slide2Axis(node, { duration = 400, maxWidth=75, maxHeight}){
+        return {
+            duration,
+            css: t => {
+                if (t < maxWidth) {
+                    return `width: ${t}%`
+                } else {
+                    return `height: ${t}%`
+                }
+                     
+            }
+        }
+    }
 </script>
   
 <div class="accordion {styleAcc}">
@@ -58,6 +72,7 @@
         border-width: 5px;
     }
     .details {
+        min-width: 20%;
         overflow: hidden;
         background-color: #cecece;
         padding:1rem;
