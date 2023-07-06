@@ -38,6 +38,8 @@
         <slot name="details">
         </slot>
     </div>
+    {:else}
+    <script is:inline>document.activeElement.blur();</script>
     {/if}
 </div>
   
