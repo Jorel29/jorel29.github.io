@@ -1,7 +1,8 @@
 
 <section class="bar-graph bar-graph-horizontal bar-graph-one relative left-1/2 -translate-x-1/2 w-1/2">
+    <div class="bar-bg grid gap-2 rounded-b-md">
     <div class="bar-one">
-      <span class="year">2019</span>
+      <span class="year">2016</span>
       <div class="bar" data-percentage="69.6%"></div>
     </div>
     <div class="bar-two">
@@ -16,12 +17,16 @@
       <span class="year">2019</span>
       <div class="bar" data-percentage="76.8%"></div>
     </div>
+    </div>
 </section>
 
 <style>
     
 
 /* Bar Graph Horizontal */
+.bar-bg{
+    background-color: rgba(0, 0, 0, 0.2);
+}
 .bar-graph .year {
   animation: fade-in-text 2.2s 0.1s forwards;
   -moz-animation: fade-in-text 2.2s 0.1s forwards;
