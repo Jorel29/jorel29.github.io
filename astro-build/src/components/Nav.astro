@@ -1,12 +1,20 @@
 ---
-import DropdownButton from './DropdownButton.svelte'
+import DropdownButton from './DropdownButton.svelte';
+import Accordion from './Accordion.svelte';
 let GitHubLink = "https://github.com/Jorel29";
 let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
 ---
 
 <div class="nav-bar">
     <div class="div-nav-bar">
-        <DropdownButton/>
+        <Accordion styleDetails="width: 10rem" styleSlide="w-12 h-12 hover:w-14 focus:w-14" client:visible>
+            <div slot="head" class="text-sm">Nav</div>
+            <div slot="details">
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </Accordion>
         <p class="nav-title">Jorel Huerto</p>
         <a class="external-link" href={LinkedInLink}>
             <img class="linked-in-icon" src="/LI-In-Bug.png"/>        

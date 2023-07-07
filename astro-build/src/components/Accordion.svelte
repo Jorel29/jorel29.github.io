@@ -56,14 +56,14 @@
     
     .slide{
         /*width: 30%;*/
-        height: 4rem;
+        
         background-color: white;
         border-radius: 50px;
         border-color: transparent;
         transition: 0.35s ease-in-out;
     }
     .slide:focus{
-        width: 90%;
+        /*width: 90%;*/
         border-color: black;
         border-top: black;
         border-right: black;
