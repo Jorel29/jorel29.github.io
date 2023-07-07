@@ -8,6 +8,9 @@
     const handleClick = () => {
         open = !open
         //want to add an unfocus logic
+        if (open){
+
+        }
     };
     const focusOut = () => open = open;
     
