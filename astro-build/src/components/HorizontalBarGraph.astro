@@ -1,4 +1,9 @@
-
+---
+export interface Props{
+    baronewidth:string;
+}
+const {baronewidth = "10%"} = Astro.props;
+---
 <section class="bar-graph bar-graph-horizontal bar-graph-one relative left-1/2 -translate-x-1/2 w-1/2">
     <div class="bar-bg grid gap-2 rounded-b-md">
         <div class="bar-one">
@@ -20,7 +25,7 @@
     </div>
 </section>
 
-<style>
+<style define:vars={{ baronewidth}}>
     
 
 /* Bar Graph Horizontal */
@@ -105,7 +110,7 @@
     width: 0;
   }
   100% {
-    width: 69.6%;
+    width: var(--baronewidth);
   }
 }
 
