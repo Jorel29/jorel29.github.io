@@ -9,7 +9,7 @@
         open = !open
         //want to add an unfocus logic
     };
-    const focusOut = () => open = false;
+    const focusOut = () => open = open;
     
     /*function slide2Axis(node, { duration = 400, maxWidth=75, maxHeight}){
         return {
@@ -64,18 +64,15 @@
     }
     .slide:focus{
         /*width: 90%;*/
-        border-color: black;
-        border-top: black;
-        border-right: black;
+        
         border-width: 5px;
     }
     .details {
         min-width: 20%;
         overflow: hidden;
-        background-color: #cecece;
-        padding:1rem;
-        border-radius: 0.25rem;
-        display: block;
+        
+        
+        display: flex;
         /*width: 75%*/;
         text-overflow: ellipsis;
         white-space: normal;
