@@ -8,8 +8,11 @@
     const handleClick = () => {
         open = !open
         //want to add an unfocus logic
+        if (open){
+
+        }
     };
-    const focusOut = () => open = false;
+    const focusOut = () => open = open;
     
     /*function slide2Axis(node, { duration = 400, maxWidth=75, maxHeight}){
         return {
@@ -38,6 +41,8 @@
         <slot name="details">
         </slot>
     </div>
+    {:else}
+    <script is:inline>document.activeElement.blur();</script>
     {/if}
 </div>
   
@@ -54,26 +59,23 @@
     
     .slide{
         /*width: 30%;*/
-        height: 4rem;
+        
         background-color: white;
         border-radius: 50px;
         border-color: transparent;
         transition: 0.35s ease-in-out;
     }
     .slide:focus{
-        width: 90%;
-        border-color: black;
-        border-top: black;
-        border-right: black;
+        /*width: 90%;*/
+        
         border-width: 5px;
     }
     .details {
         min-width: 20%;
         overflow: hidden;
-        background-color: #cecece;
-        padding:1rem;
-        border-radius: 0.25rem;
-        display: block;
+        
+        
+        display: flex;
         /*width: 75%*/;
         text-overflow: ellipsis;
         white-space: normal;

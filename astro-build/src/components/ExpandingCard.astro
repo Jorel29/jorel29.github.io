@@ -11,18 +11,20 @@ const { href, title, body } = Astro.props;
 
 <div class="panel">
 	<div class="panel-content">
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
+		<div class="header-paragraph-wrapper">
+			<h2>
+				{title}
+				<span>&rarr;</span>
+			</h2>
+			<p>
+				{body}
+			</p>
+		</div>	
 		<div id="wrapper">
-			<Accordion styleAccordion="relative left-1/2" styleSlide="hover:w-8/12 focus:w-10/12 -translate-x-1/2 w-1/2" styleDetails="width: 75%; transform: translate(-50%,0%)" client:visible>
+			<Accordion styleAccordion="relative left-1/2" styleSlide="h-8 hover:w-10/12 focus:w-10/12 -translate-x-1/2 w-1/2" styleDetails="width: 75%; transform: translate(-50%,0%)" client:visible>
 				<div slot="head" class="text-sm">Learn More &#8595;</div>
 					<div slot="details">
-						<p>
+						<p class="text-slate-200">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						</p>
 					</div>
@@ -33,9 +35,8 @@ const { href, title, body } = Astro.props;
 <style>
 	
     .panel{
-        list-style: none;
 		overflow: hidden;
-		display: flex;
+		display: grid;
 		padding: 0.25rem;
 		background-color: rgba(0, 0, 0, 0.2);
         background-blend-mode:color;
@@ -54,22 +55,27 @@ const { href, title, body } = Astro.props;
         position: relative;
         transition: all 0.7s ease-out;
 	
-    }
-    .panel{
+	}
+    .panel:hover{
         flex: 1;
     }
 
 	.panel-content{
-		
+		overflow: hidden;
+		white-space: nowrap;
 		width: 100%;
 		text-decoration: none;
 		line-height: 1.4;
-		padding: 1rem 1.3rem;
+		padding: 1rem;
 		border-radius: 0.35rem;
 		color: white;
         opacity: 100%;
 		background-color: transparent;
 		opacity: 1;
+	}
+	.header-paragraph-wrapper{
+		display: grid;
+		position: relative;
 	}
 	h2 {
 		margin: 0;

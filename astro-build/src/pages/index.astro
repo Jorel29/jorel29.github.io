@@ -5,16 +5,17 @@ import ExpandingCard from '../components/ExpandingCard.astro'
 import Nav from '../components/Nav.astro';
 import PanelLayout from '../layouts/PanelLayout.astro';
 import Accordion from '../components/Accordion.svelte';
+import HorizontalBarGraph from '../components/HorizontalBarGraph.astro';
 ---
 
 
 
-<Layout title="Welcome to Jorel's Website">
+<Layout title="Jorel Huerto">
 	<main>
 		<Nav></Nav>
 		<div id="background">
 			<div id="accordion-wrapper">
-				<Accordion styleAccordion="relative left-1/2" styleSlide="w-1/4 hover:w-6/12 focus:w-8/12 -translate-x-1/2" styleDetails="width: 75%; transform: translate(-50%,0%);" client:visible>
+				<Accordion styleAccordion="relative left-1/2" styleSlide="w-1/4 h-12 hover:w-6/12 focus:w-8/12 -translate-x-1/2" styleDetails="width: 75%; transform: translate(-50%,0%);" client:visible>
 					<div slot="head">About Me</div>
 					<div slot="details">
 						<p>
@@ -51,26 +52,8 @@ import Accordion from '../components/Accordion.svelte';
 				/>
 			</PanelLayout>
 			
-			<div class="swiper">
-				<div class="swiper-wrapper">
-					  <div class="swiper-slide">
-						<Card
-							href="https://astro.build/chat/"
-							title="Community"
-							body="Come say hi to our amazing Discord community. ❤️"
-						/>
-					</div>
-					<div class="swiper-slide">
-						<Card
-							href="https://astro.build/themes/"
-							title="Themes"
-							body="Explore a galaxy of community-built starter themes."
-						/>
-					</div>
-				</div>
-				<div class="swiper-button-next"></div>
-				<div class="swiper-button-prev"></div>
-			</div>
+			<HorizontalBarGraph barWidth='90%' barStyle='' barLabel='100' title="C++"/>
+			<HorizontalBarGraph barWidth='45%' barStyle='' barLabel='50' title="C#"/>
 		</div>
 		
 		  
@@ -100,6 +83,7 @@ import Accordion from '../components/Accordion.svelte';
 
 <style>
 	#accordion-wrapper{
+		overflow: hidden;
 		padding-top: 50px;
 		z-index: 1;
 	}
