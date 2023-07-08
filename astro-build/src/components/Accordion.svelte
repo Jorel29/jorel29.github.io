@@ -2,6 +2,7 @@
     
     import { slide } from 'svelte/transition';
     export let open = false;
+    export let useFocusOut = false;
     export let styleAccordion  = '';
     export let styleSlide  = '';
     export let styleDetails = '';
@@ -12,7 +13,7 @@
 
         }
     };
-    const focusOut = () => open = open;
+    const focusOut = () => open = false;
     
     /*function slide2Axis(node, { duration = 400, maxWidth=75, maxHeight}){
         return {
@@ -31,9 +32,15 @@
   
 <div class="accordion {styleAccordion}">
     <div class="header">
+        {#if useFocusOut}
         <button class="slide {styleSlide}" on:click={handleClick} on:focusout={focusOut}>
             <slot name="head"></slot>
         </button>
+        {:else}
+        <button class="slide {styleSlide}" on:click={handleClick}>
+            <slot name="head"></slot>
+        </button>
+        {/if}
     </div>
       
     {#if open}
