@@ -9,10 +9,10 @@ let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
     <div class="div-nav-bar">
         <Accordion styleDetails="width: 5rem;" styleSlide="w-12 h-12" client:visible>
             <div slot="head" class="text-sm">Nav</div>
-            <div class="grid" slot="details">
-                <button class="w-20 h-10 bg-white rounded-full">Link 1</button>
-                <button class="w-20 h-10 bg-white rounded-full">Link 2</button>
-                <button class="w-20 h-10 bg-white rounded-full">Link 3</button>
+            <div class="grid gap-1" slot="details">
+                <button class="w-20 h-10 absolute bg-white rounded-full">Link 1</button>
+                <button class="w-20 h-10 absolute bg-white rounded-full">Link 2</button>
+                <button class="w-20 h-10 absolute bg-white rounded-full">Link 3</button>
             </div>
         </Accordion>
         <p class="nav-title">Jorel Huerto</p>
@@ -54,6 +54,7 @@ let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
         justify-content: center;
         max-width: 100%;
         padding-top: 10px;
+        max-height: 70px;
     }
     .external-link{
         justify-content: baseline;

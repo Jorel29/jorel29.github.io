@@ -1,40 +1,27 @@
 ---
 export interface Props{
-    baronewidth:string;
+    title:string
+    barWidth:string;
+    barLabel:string;
+    barStyle:string;
 }
-const {baronewidth = "10%"} = Astro.props;
+const {barWidth = "10%", barStyle = "bar-bg rounded-b-md", barLabel, title} = Astro.props;
 ---
-<section class="bar-graph bar-graph-horizontal bar-graph-one relative left-1/2 -translate-x-1/2 w-1/2">
-    <div class="bar-bg grid gap-2 rounded-b-md">
-        <div class="bar-one">
-            <span class="year">2016</span>
-            <div class="bar" data-percentage="50%"></div>
-        </div>
-        <div class="bar-two">
-            <span class="year">2018</span>
-            <div class="bar" data-percentage="71%"></div>
-        </div>
-        <div class="bar-three">
-            <span class="year">2017</span>
-            <div class="bar" data-percentage="74.7%"></div>
-        </div>
-        <div class="bar-four">
-            <span class="year">2019</span>
-            <div class="bar" data-percentage="76.8%"></div>
-        </div>
+<section class="bar-graph bar-graph-horizontal bar-graph-one">
+    
+    <div class="bar-one">
+        <span class="title">{title}</span>
+        <div class="bar" data-percentage={barLabel}></div>
     </div>
+    
 </section>
 
-<style define:vars={{ baronewidth}}>
+<style define:vars={ {barWidth} }>
     
 
 /* Bar Graph Horizontal */
-.bar-bg{
-    background-color: rgba(0, 0, 0, 0.2);
-}
-.bar-graph .year {
-  animation: fade-in-text 2.2s 0.1s forwards;
-  -moz-animation: fade-in-text 2.2s 0.1s forwards;
+
+.bar-graph .title {
   animation: fade-in-text 2.2s 0.1s forwards;
   opacity: 0;
 }
@@ -49,7 +36,7 @@ const {baronewidth = "10%"} = Astro.props;
   width: 100%;
 }
 
-.bar-graph-horizontal .year {
+.bar-graph-horizontal .title {
   float: left;
   margin-top: 18px;
   width: 50px;
@@ -66,11 +53,8 @@ const {baronewidth = "10%"} = Astro.props;
 
 .bar-graph-one .bar::after {
   animation: fade-in-text 2.2s 0.1s forwards;
-  -moz-animation: fade-in-text 2.2s 0.1s forwards;
-  animation: fade-in-text 2.2s 0.1s forwards;
   color: #fff;
   content: attr(data-percentage);
-  font-weight: 700;
   position: absolute;
   right: 16px;
   top: 17px;
@@ -79,30 +63,8 @@ const {baronewidth = "10%"} = Astro.props;
 .bar-graph-one .bar-one .bar {
   background-color: #64b2d1;
   animation: show-bar-one 1.2s 0.1s forwards;
-  -moz-animation: show-bar-one 1.2s 0.1s forwards;
-  animation: show-bar-one 1.2s 0.1s forwards;
 }
 
-.bar-graph-one .bar-two .bar {
-  background-color: #5292ac;
-  animation: show-bar-two 1.2s 0.2s forwards;
-  -moz-animation: show-bar-two 1.2s 0.2s forwards;
-  animation: show-bar-two 1.2s 0.2s forwards;
-}
-
-.bar-graph-one .bar-three .bar {
-  background-color: #407286;
-  animation: show-bar-three 1.2s 0.3s forwards;
-  -moz-animation: show-bar-three 1.2s 0.3s forwards;
-  animation: show-bar-three 1.2s 0.3s forwards;
-}
-
-.bar-graph-one .bar-four .bar {
-  background-color: #2e515f;
-  animation: show-bar-four 1.2s 0.4s forwards;
-  -moz-animation: show-bar-four 1.2s 0.4s forwards;
-  animation: show-bar-four 1.2s 0.4s forwards;
-}
 
 /* Bar Graph Horizontal Animations */
 @keyframes show-bar-one {
@@ -110,34 +72,7 @@ const {baronewidth = "10%"} = Astro.props;
     width: 0;
   }
   100% {
-    width: var(--baronewidth);
-  }
-}
-
-@keyframes show-bar-two {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 71%;
-  }
-}
-
-@keyframes show-bar-three {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 74.7%;
-  }
-}
-
-@keyframes show-bar-four {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 76.8%;
+    width: var(--barWidth);
   }
 }
 
