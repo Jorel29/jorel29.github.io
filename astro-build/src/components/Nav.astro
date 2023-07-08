@@ -7,15 +7,18 @@ let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
 
 <div class="nav-bar">
     <div class="div-nav-bar gap-2">
-        <Accordion styleAccordion="w-12 h-12" styleDetails="width: 5rem;" styleSlide="w-12 h-12 -translate-y-1" client:visible>
-            <div slot="head" class="text-sm">Nav</div>
-            <div class="grid gap-1" slot="details">
-                <button class="w-20 h-10 bg-white rounded-full">Link 1</button>
-                <button class="w-20 h-10 bg-white rounded-full">Link 2</button>
-                <button class="w-20 h-10 bg-white rounded-full">Link 3</button>
-            </div>
-        </Accordion>
-        <p class="nav-title grow md:text-center">Jorel Huerto</p>
+        <div class="align-top">
+            <Accordion styleAccordion="w-12 h-12" styleDetails="width: 5rem;" styleSlide="w-12 h-12 -translate-y-3" client:visible>
+                <div slot="head" class="text-sm">Nav</div>
+                <div class="grid gap-1" slot="details">
+                    <button class="w-20 h-10 bg-white rounded-full">Link 1</button>
+                    <button class="w-20 h-10 bg-white rounded-full">Link 2</button>
+                    <button class="w-20 h-10 bg-white rounded-full">Link 3</button>
+                </div>
+            </Accordion>
+        </div>
+        
+        <p class="nav-title grow text-center text-xl sm:text-6xl">Jorel Huerto</p>
         <a class="external-link" href={LinkedInLink}>
             <img class="linked-in-icon" src="/LI-In-Bug.png"/>        
         </a>
@@ -38,7 +41,7 @@ let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
         height: 10%;
         /*grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));*/
         /*align-items: center;*/
-        vertical-align: middle;
+       
         background-color: transparent;
        
         padding-top: 0rem;
@@ -59,6 +62,7 @@ let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
         justify-content: baseline;
     }
     .linked-in-icon{
+        min-width: 64px;
         width: auto;
         height:55px;
     }
@@ -69,6 +73,7 @@ let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
         border-radius: 5px;
     }
     .github-icon{
+        min-width: 54px;
         width: auto;
         height: 55px;
     }
