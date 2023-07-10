@@ -20,8 +20,8 @@ const { href, title, body } = Astro.props;
 				{body}
 			</p>
 		</div>	
-		<div id="wrapper">
-			<Accordion useFocusOut={true} styleAccordion="relative left-1/2" styleSlide="h-8 hover:w-10/12 focus:w-10/12 -translate-x-1/2 w-1/2" styleDetails="width: 75%; transform: translate(-50%,0%)" client:visible>
+		<div class="accordion-wrapper">
+			<Accordion useFocusOut={true} styleAccordion="relative left-1/2" styleSlide="w-36 h-10 hover:w-10/12 focus:w-10/12 -translate-x-1/2 w-1/2" styleDetails="width: 75%; transform: translate(-50%,0%)" client:visible>
 				<div slot="head" class="text-sm">Learn More &#8595;</div>
 					<div slot="details">
 						<p class="text-slate-200">
@@ -61,8 +61,7 @@ const { href, title, body } = Astro.props;
     }
 
 	.panel-content{
-		overflow: hidden;
-		white-space: nowrap;
+		
 		width: 100%;
 		text-decoration: none;
 		line-height: 1.4;
@@ -73,9 +72,18 @@ const { href, title, body } = Astro.props;
 		background-color: transparent;
 		opacity: 1;
 	}
+
+	
 	.header-paragraph-wrapper{
-		display: grid;
+		display: block;
 		position: relative;
+		overflow-y: hidden;
+		text-overflow: ellipsis;
+		height: 5.6rem;
+		width: auto;
+	}
+	.accordion-wrapper{
+		padding-top: 0;
 	}
 	h2 {
 		margin: 0;
