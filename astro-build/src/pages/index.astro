@@ -4,7 +4,7 @@ import ExpandingCard from '../components/ExpandingCard.astro'
 import Nav from '../components/Nav.astro';
 import PanelLayout from '../layouts/PanelLayout.astro';
 import Accordion from '../components/Accordion.svelte';
-import HorizontalBarGraph from '../components/HorizontalBar.astro';
+import HorizontalBar from '../components/HorizontalBar.astro';
 ---
 
 
@@ -51,8 +51,8 @@ import HorizontalBarGraph from '../components/HorizontalBar.astro';
 				/>
 			</PanelLayout>
 			
-			<HorizontalBarGraph barWidth='90%' barStyle='' barLabel='100' title="C++"/>
-			<HorizontalBarGraph barWidth='45%' barStyle='' barLabel='50' title="C#"/>
+			<HorizontalBar barWidth='90%' barStyle='bg-black/[0.2]' barLabel='100' title="C++"/>
+			<HorizontalBar barWidth='45%' barStyle='bg-black/[0.2]' barLabel='50' title="C#"/>
 		</div>
 		
 		  

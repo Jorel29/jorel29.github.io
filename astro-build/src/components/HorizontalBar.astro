@@ -5,11 +5,11 @@ export interface Props{
     barLabel:string;
     barStyle:string;
 }
-const {barWidth = "10%", barStyle = "bar-bg rounded-b-md", barLabel, title} = Astro.props;
+const {barWidth = "10%", barStyle = "bg-black", barLabel, title} = Astro.props;
 ---
 <section class="bar-graph bar-graph-horizontal bar-graph-one">
     
-    <div class="bar-one">
+    <div class:list={["bar-one", barStyle]}>
         <span class="title">{title}</span>
         <div class="bar" data-percentage={barLabel}></div>
     </div>
