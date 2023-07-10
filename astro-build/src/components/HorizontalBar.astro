@@ -1,16 +1,17 @@
 ---
 export interface Props{
-    title:string
+    title:string;
+    titleStyle:string;
     barWidth:string;
     barLabel:string;
-    barStyle:string;
+    barBgStyle:string;
 }
-const {barWidth = "10%", barStyle = "bar-bg rounded-b-md", barLabel, title} = Astro.props;
+const {barWidth = "10%", barBgStyle = "bg-black", barLabel, title, titleStyle} = Astro.props;
 ---
 <section class="bar-graph bar-graph-horizontal bar-graph-one">
     
-    <div class="bar-one">
-        <span class="title">{title}</span>
+    <div class:list={["bar-one", barBgStyle]}>
+        <span class:list={["title", titleStyle]}>{title}</span>
         <div class="bar" data-percentage={barLabel}></div>
     </div>
     
