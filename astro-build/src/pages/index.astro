@@ -51,8 +51,10 @@ import HorizontalBar from '../components/HorizontalBar.astro';
 				/>
 			</PanelLayout>
 			
-			<HorizontalBar barWidth='90%' barBgStyle='bg-black/[0.2]' barLabel='100' title="C++" titleStyle='text-white'/>
-			<HorizontalBar barWidth='45%' barBgStyle='bg-black/[0.2]' barLabel='50' title="C#" titleStyle='text-white'/>
+			<div class = "bar-chart-container">
+				<HorizontalBar barWidth='90%' barBgStyle='bg-black/[0.2]' barLabel='100' title="C++" titleStyle='text-white'/>
+				<HorizontalBar barWidth='45%' barBgStyle='bg-black/[0.2]' barLabel='50' title="C#" titleStyle='text-white'/>
+			</div>
 		</div>
 		
 		  
@@ -79,12 +81,6 @@ import HorizontalBar from '../components/HorizontalBar.astro';
 		padding-top: 50px;
 		z-index: 1;
 	}
-	.inset-center {
-  		position: absolute;
-  		top: 50%;
-  		left: 50%;
-  		transform: translate(-50%, -50%);
-	}
 	#background{
 		overflow: visible;
 		margin-top: 10px;
@@ -95,44 +91,6 @@ import HorizontalBar from '../components/HorizontalBar.astro';
 	main {
 		margin: auto;
 		padding: 0rem
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-		padding-top: 75px;
 	}
 	Nav{
 		z-index: 1;
