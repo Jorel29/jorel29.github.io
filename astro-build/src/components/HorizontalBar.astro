@@ -8,7 +8,7 @@ export interface Props{
 }
 
 const {sectionWidth = "100px", barWidth = "10%", barBgStyle = "bg-black", title, titleStyle} = Astro.props;
-let calculatedWidth =  (parseInt(sectionWidth)-50)*(parseInt(barWidth)/100);
+let calculatedWidth =  (parseInt(sectionWidth)-125)*(parseInt(barWidth)/100);
 let realWidth = calculatedWidth.toString() + "px"
 ---
 <section class="bar-graph bar-graph-horizontal bar-graph-one">
@@ -32,12 +32,11 @@ let realWidth = calculatedWidth.toString() + "px"
 
 .bar-graph {
   width: var(--sectionWidth);
-  max-width: 100vw;
 }
 
 .title {
   margin-top: 18px;
-  width: 50px;
+  width: 125px;
 }
 
 .bar {
