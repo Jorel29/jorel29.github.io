@@ -52,8 +52,23 @@ import HorizontalBar from '../components/HorizontalBar.astro';
 			</PanelLayout>
 			
 			<div class = "bar-chart-grid grid justify-center bg-black/[0.2]">
-				<HorizontalBar barWidth='90%' barBgStyle='' barLabel='100' title="C++" titleStyle='text-white'/>
-				<HorizontalBar barWidth='45%' barBgStyle='' barLabel='50' title="C#" titleStyle='text-white'/>
+				<HorizontalBar 
+					title="C++" 
+					titleStyle='text-white'
+					barMaxWidth='500px'
+					barWidth='90%' 
+					barBgStyle='' 
+					barLabel='100' 
+				/>
+				<HorizontalBar 
+					title="C#" 
+					titleStyle='text-white'
+					barMaxWidth='500px'
+					barWidth='50%' 
+					barBgStyle='flex' 
+					barLabel='50' 
+					
+				/>
 			</div>
 		</div>
 		
