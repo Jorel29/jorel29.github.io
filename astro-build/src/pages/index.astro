@@ -12,8 +12,8 @@ import HorizontalBar from '../components/HorizontalBar.astro';
 <Layout title="Jorel Huerto">
 	<main>
 		<Nav></Nav>
-		<div id="background">
-			<div id="accordion-wrapper">
+		<div class="background">
+			<div class="about-me-wrapper bg-black/[0.2]">
 				<Accordion styleAccordion="relative left-1/2" styleSlide="w-1/4 h-12 hover:w-6/12 focus:w-8/12 -translate-x-1/2" styleDetails="width: 75%; transform: translate(-50%,0%);" client:visible>
 					<div slot="head">About Me</div>
 					<div slot="details">
@@ -51,9 +51,9 @@ import HorizontalBar from '../components/HorizontalBar.astro';
 				/>
 			</PanelLayout>
 			
-			<div class = "bar-chart-container">
-				<HorizontalBar barWidth='90%' barBgStyle='bg-black/[0.2]' barLabel='100' title="C++" titleStyle='text-white'/>
-				<HorizontalBar barWidth='45%' barBgStyle='bg-black/[0.2]' barLabel='50' title="C#" titleStyle='text-white'/>
+			<div class = "bar-chart-grid grid justify-center bg-black/[0.2]">
+				<HorizontalBar barWidth='90%' barBgStyle='' barLabel='100' title="C++" titleStyle='text-white'/>
+				<HorizontalBar barWidth='45%' barBgStyle='' barLabel='50' title="C#" titleStyle='text-white'/>
 			</div>
 		</div>
 		
@@ -61,9 +61,9 @@ import HorizontalBar from '../components/HorizontalBar.astro';
 
 		<script>
 			VANTA.NET({
-				el: "#background",
-				mouseControls: true,
-				touchControls: true,
+				el: ".background",
+				mouseControls: false,
+				touchControls: false,
 				gyroControls: false,
 				minHeight: 200.00,
 				minWidth: 200.00,
@@ -76,12 +76,12 @@ import HorizontalBar from '../components/HorizontalBar.astro';
 </Layout>
 
 <style>
-	#accordion-wrapper{
+	.about-me-wrapper{
 		overflow: hidden;
 		padding-top: 50px;
-		z-index: 1;
+		z-index: 2;
 	}
-	#background{
+	.background{
 		overflow: visible;
 		margin-top: 10px;
 		width: 100%;
