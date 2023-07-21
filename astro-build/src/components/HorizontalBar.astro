@@ -3,22 +3,24 @@ export interface Props{
     title:string;
     titleStyle:string;
     barWidth:string;
-    barMaxWidth:string;
-    barLabel:string;
+    sectionWidth:string;
     barBgStyle:string;
 }
-const {barMaxWidth = "100px", barWidth = "10%", barBgStyle = "bg-black", barLabel, title, titleStyle} = Astro.props;
+
+const {sectionWidth = "100px", barWidth = "10%", barBgStyle = "bg-black", title, titleStyle} = Astro.props;
+let calculatedWidth =  (parseInt(sectionWidth)-50)*(parseInt(barWidth)/100);
+let realWidth = calculatedWidth.toString() + "px"
 ---
 <section class="bar-graph bar-graph-horizontal bar-graph-one">
     
     <div class:list={["bar-one", barBgStyle]}>
-        <span class:list={["title", titleStyle]}>{title}</span>
-        <div class="bar" data-percentage={barLabel}></div>
+        <div class:list={["title", titleStyle]}>{title}</div>
+        <div class="bar" data-percentage={barWidth}></div>
     </div>
     
 </section>
 
-<style define:vars={ {barWidth, barMaxWidth} }>
+<style define:vars={ {realWidth, sectionWidth} }>
     
 
 /* Bar Graph Horizontal */
@@ -29,12 +31,11 @@ const {barMaxWidth = "100px", barWidth = "10%", barBgStyle = "bg-black", barLabe
 }
 
 .bar-graph {
-  width: var(--barMaxWidth);
+  width: var(--sectionWidth);
   max-width: 100vw;
 }
 
 .title {
-  float: left;
   margin-top: 18px;
   width: 50px;
 }
@@ -42,7 +43,7 @@ const {barMaxWidth = "100px", barWidth = "10%", barBgStyle = "bg-black", barLabe
 .bar {
   border-radius: 3px;
   height: 55px;
-  float: left;
+  
   overflow: hidden;
   position: relative;
   width: 0;
@@ -69,7 +70,7 @@ const {barMaxWidth = "100px", barWidth = "10%", barBgStyle = "bg-black", barLabe
     width: 0;
   }
   100% {
-    width: var(--barWidth);
+    width: var(--realWidth);
   }
 }
 
