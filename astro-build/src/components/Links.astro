@@ -1,0 +1,27 @@
+---
+import Accordion from './Accordion.svelte';
+let GitHubLink = "https://github.com/Jorel29";
+let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
+---
+
+<div class="div-nav-bar justify-center">
+    <div class="align-top z-10 h-4">
+        <Accordion styleAccordion="w-20 h-10" styleDetails="width: 5rem;" styleSlide="w-20 h-10 -translate-y-3 hover:outline" client:visible>
+            <div slot="head" class="text-sm">Socials</div>
+            <div class="grid gap-1" slot="details">
+                <button class="z-10 bg-black rounded-lg grid justify-center">
+                    <a class="external-link" href={LinkedInLink}>
+                        <img class="linked-in-icon" src="/LI-In-Bug.png"/>        
+                    </a>
+                </button>
+                <button class="z-10 bg-black rounded-lg grid justify-center">
+                    <a class="external-link" href={GitHubLink}>
+                        <img class="github-icon" src="/github-mark-white.png"/>        
+                    </a>
+                </button>
+                <button class="w-20 h-10 bg-white rounded-full">Link 3</button>
+            </div>
+        </Accordion>
+    </div>
+    
+</div>

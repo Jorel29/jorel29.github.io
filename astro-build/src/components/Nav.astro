@@ -5,27 +5,19 @@ let GitHubLink = "https://github.com/Jorel29";
 let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
 ---
 
-<div class="nav-bar">
-    <div class="div-nav-bar gap-2">
-        <div class="align-top">
-            <Accordion styleAccordion="w-12 h-12" styleDetails="width: 5rem;" styleSlide="w-12 h-12 -translate-y-3" client:visible>
-                <div slot="head" class="text-sm">Nav</div>
-                <div class="grid gap-1" slot="details">
-                    <button class="w-20 h-10 bg-white rounded-full">Link 1</button>
-                    <button class="w-20 h-10 bg-white rounded-full">Link 2</button>
-                    <button class="w-20 h-10 bg-white rounded-full">Link 3</button>
-                </div>
-            </Accordion>
-        </div>
-        
-        <p class="nav-title grow text-center text-xl sm:text-6xl sm:translate-x-10">Jorel Huerto</p>
-        <a class="external-link" href={LinkedInLink}>
-            <img class="linked-in-icon" src="/LI-In-Bug.png"/>        
-        </a>
-        <a class="external-link" href={GitHubLink}>
-            <img class="github-icon" src="/github-mark-white.png"/>        
-        </a>
+<div class="nav-bar grid justify-center bg-black/[0.5] rounded-2xl">
+    <div class="nav-title grid justify-center h-14">Jorel Huerto</div>
+    
+    <div class="flex items-center justify-center">
+        <nav class = "bg-white/[0.4]">
+            <ol>
+                <li class="nav-list"><a href="#">Home</a></li>
+                <li class="nav-list"><a href="#">Contact</a></li>
+                <li class="nav-list">Project Name</li>
+              </ol>
+        </nav>
     </div>
+    
 </div>
 <style>
     .nav-title{
@@ -38,7 +30,7 @@ let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
     .nav-bar{
         margin: 0;
         width: 100%;
-        height: 10%;
+        height: 15%;
         /*grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));*/
         /*align-items: center;*/
        
@@ -55,8 +47,7 @@ let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
     .div-nav-bar{
         display:flex;
         max-width: 100%;
-        padding-top: 5px;
-        max-height: 70px;
+        padding-top: 0px;
     }
     .external-link{
         justify-content: baseline;
@@ -82,5 +73,24 @@ let LinkedInLink = "https://www.linkedin.com/in/jorelhuerto/";
         height: 55px;
         background-color: gray;
         border-radius: 50%;
+    }
+
+    .nav-list ol {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .nav-list {
+        display: inline-block;
+        
+    }
+
+    .nav-list a::after {
+        display: inline-block;
+        color: #000;
+        content: '>';
+        font-size: 80%;
+        font-weight: bold;
+        padding: 0 3px;
     }
 </style>
