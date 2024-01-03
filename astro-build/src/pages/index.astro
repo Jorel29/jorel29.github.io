@@ -12,16 +12,9 @@ import HorizontalBar from '../components/HorizontalBar.astro';
 <Layout title="Jorel Huerto">
 	<main>
 		<Nav></Nav>
-		<div id="background">
-			<div id="accordion-wrapper">
-				<Accordion styleAccordion="relative left-1/2" styleSlide="w-1/4 h-12 hover:w-6/12 focus:w-8/12 -translate-x-1/2" styleDetails="width: 75%; transform: translate(-50%,0%);" client:visible>
-					<div slot="head">About Me</div>
-					<div slot="details">
-						<p class="text-slate-200">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</p>
-					</div>
-				</Accordion>
+		<div class="background">
+			<div class="about-me-wrapper bg-black/[0.2]">
+				<p>summary</p>
 			</div>
 			
 			<PanelLayout>
@@ -51,17 +44,57 @@ import HorizontalBar from '../components/HorizontalBar.astro';
 				/>
 			</PanelLayout>
 			
-			<HorizontalBar barWidth='90%' barBgStyle='bg-black/[0.2]' barLabel='100' title="C++" titleStyle='text-white'/>
-			<HorizontalBar barWidth='45%' barBgStyle='bg-black/[0.2]' barLabel='50' title="C#" titleStyle='text-white'/>
+			<div class = "bar-chart-grid grid justify-center bg-black/[0.2]">
+				<HorizontalBar 
+					title="Python" 
+					titleStyle='text-white'
+					sectionWidth='600px'
+					barWidth='80' 
+					barBgStyle='flex' 
+					 
+				/>
+				<HorizontalBar 
+					title="JavaScript" 
+					titleStyle='text-white'
+					sectionWidth='600px'
+					barWidth='70' 
+					barBgStyle='flex' 
+					
+				/>
+				<HorizontalBar 
+					title="C" 
+					titleStyle='text-white'
+					sectionWidth='600px'
+					barWidth='70' 
+					barBgStyle='flex' 
+					
+				/>
+				<HorizontalBar 
+					title="C++" 
+					titleStyle='text-white'
+					sectionWidth='600px'
+					barWidth='50' 
+					barBgStyle='flex' 
+					
+				/>
+				<HorizontalBar 
+					title="Java" 
+					titleStyle='text-white'
+					sectionWidth='600px'
+					barWidth='50' 
+					barBgStyle='flex' 
+					
+				/>
+			</div>
 		</div>
 		
 		  
 
 		<script>
 			VANTA.NET({
-				el: "#background",
-				mouseControls: true,
-				touchControls: true,
+				el: ".background",
+				mouseControls: false,
+				touchControls: false,
 				gyroControls: false,
 				minHeight: 200.00,
 				minWidth: 200.00,
@@ -74,18 +107,12 @@ import HorizontalBar from '../components/HorizontalBar.astro';
 </Layout>
 
 <style>
-	#accordion-wrapper{
+	.about-me-wrapper{
 		overflow: hidden;
 		padding-top: 50px;
-		z-index: 1;
+		z-index: 2;
 	}
-	.inset-center {
-  		position: absolute;
-  		top: 50%;
-  		left: 50%;
-  		transform: translate(-50%, -50%);
-	}
-	#background{
+	.background{
 		overflow: visible;
 		margin-top: 10px;
 		width: 100%;
@@ -95,44 +122,6 @@ import HorizontalBar from '../components/HorizontalBar.astro';
 	main {
 		margin: auto;
 		padding: 0rem
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-		padding-top: 75px;
 	}
 	Nav{
 		z-index: 1;

@@ -3,21 +3,24 @@ export interface Props{
     title:string;
     titleStyle:string;
     barWidth:string;
-    barLabel:string;
+    sectionWidth:string;
     barBgStyle:string;
 }
-const {barWidth = "10%", barBgStyle = "bg-black", barLabel, title, titleStyle} = Astro.props;
+
+const {sectionWidth = "100px", barWidth = "10%", barBgStyle = "bg-black", title, titleStyle} = Astro.props;
+let calculatedWidth =  (parseInt(sectionWidth)-125)*(parseInt(barWidth)/100);
+let realWidth = calculatedWidth.toString() + "px"
 ---
 <section class="bar-graph bar-graph-horizontal bar-graph-one">
     
     <div class:list={["bar-one", barBgStyle]}>
-        <span class:list={["title", titleStyle]}>{title}</span>
-        <div class="bar" data-percentage={barLabel}></div>
+        <div class:list={["title", titleStyle]}>{title}</div>
+        <div class="bar" data-percentage={barWidth}></div>
     </div>
     
 </section>
 
-<style define:vars={ {barWidth} }>
+<style define:vars={ {realWidth, sectionWidth} }>
     
 
 /* Bar Graph Horizontal */
@@ -27,32 +30,25 @@ const {barWidth = "10%", barBgStyle = "bg-black", barLabel, title, titleStyle} =
   opacity: 0;
 }
 
-.bar-graph-horizontal {
-  max-width: 500px;
+.bar-graph {
+  width: var(--sectionWidth);
 }
 
-.bar-graph-horizontal > div {
-  float: left;
-  margin-bottom: 8px;
-  width: 100%;
-}
-
-.bar-graph-horizontal .title {
-  float: left;
+.title {
   margin-top: 18px;
-  width: 50px;
+  width: 125px;
 }
 
-.bar-graph-horizontal .bar {
+.bar {
   border-radius: 3px;
   height: 55px;
-  float: left;
+  
   overflow: hidden;
   position: relative;
   width: 0;
 }
 
-.bar-graph-one .bar::after {
+.bar-graph .bar::after {
   animation: fade-in-text 2.2s 0.1s forwards;
   color: #fff;
   content: attr(data-percentage);
@@ -61,7 +57,7 @@ const {barWidth = "10%", barBgStyle = "bg-black", barLabel, title, titleStyle} =
   top: 17px;
 }
 
-.bar-graph-one .bar-one .bar {
+.bar-graph .bar {
   background-color: #64b2d1;
   animation: show-bar-one 1.2s 0.1s forwards;
 }
@@ -73,7 +69,7 @@ const {barWidth = "10%", barBgStyle = "bg-black", barLabel, title, titleStyle} =
     width: 0;
   }
   100% {
-    width: var(--barWidth);
+    width: var(--realWidth);
   }
 }
 
